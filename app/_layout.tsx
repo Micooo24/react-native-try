@@ -49,26 +49,18 @@
 //     </View>
 //   );
 // }
-
-import { StyleSheet, Text, View } from 'react-native'
-import {Slot} from 'expo-router'
-import React from 'react'
+import React from 'react';
+import { Slot, Stack} from 'expo-router';
+import HelloWorld from './index'; // Adjust the path if necessary
+import { Text } from 'react-native';
 
 const RootLayer = () => {
   return (
-    <View style= {styles.container}>
-      <Text>RootLayer</Text>
-    </View>
-  )
-}
+    <Stack>
+      <Stack.Screen name="index" options= {{headerShown: false }}/>
+    </Stack>
+  );
+ 
+};
 
-export default RootLayer
-
-const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
-})
+export default RootLayer;
